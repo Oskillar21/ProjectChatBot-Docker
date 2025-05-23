@@ -7,6 +7,7 @@ services:
       - "8000:8000"
     networks:
       - app-network
+    container_name: api-load
 
   api-embeddings:
     build: ./ChromaEmbeddingsPool
@@ -14,6 +15,21 @@ services:
       - "8001:8001"
     networks:
       - app-network
+    container_name: api-embeddings
+
+  api-bridge:
+    build: ./NodeAPIBridge
+    ports:
+      - "8002:8002"
+    networks:
+      - app-network
+    container_name: api-bridge
+    depends_on:
+      - api-load
+      - api-embeddings
+    environment:
+      - LOAD_API=http://api-load:8000
+      - EMBEDDINGS_API=http://api-embeddings:8001
 
 networks:
   app-network:
