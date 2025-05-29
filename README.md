@@ -1,9 +1,4 @@
 
----
-
-### 🐳 `ProjectChatBot-Docker` → `README.md`
-
-```markdown
 # ProjectChatBot-Docker
 
 Proyecto que une múltiples microservicios relacionados con embeddings y procesamiento de lenguaje natural. Usa Docker Compose para orquestar los contenedores de Chroma-DB-Load, Node-API-Bridge y Chroma-DB-EmbeddingsPool.
