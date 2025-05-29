@@ -1,16 +1,25 @@
+
+---
+
+### 🐳 `ProjectChatBot-Docker` → `README.md`
+
+```markdown
 # ProjectChatBot-Docker
 
-Este proyecto contiene dos APIs desarrolladas con FastAPI, empaquetadas con Docker.
+Proyecto que une múltiples microservicios relacionados con embeddings y procesamiento de lenguaje natural. Usa Docker Compose para orquestar los contenedores de Chroma-DB-Load, Node-API-Bridge y Chroma-DB-EmbeddingsPool.
 
-## Cómo usar
+## Servicios incluidos
 
-### 1. Requisitos
+- `Chroma-DB-Load`: API para cargar y guardar embeddings
+- `Node-API-Bridge`: Puente entre la base de datos y el bot
+- `Chroma-DB-EmbeddingsPool`: Procesador de documentos con embeddings
 
-- Tener Docker y Docker Compose instalados.
-
-### 2. Clonar el proyecto
+## Uso
 
 ```bash
-git clone https://github.com/TU_USUARIO/TU_REPO.git
-cd AAProyectoIngenieriaConjunto
+# Clonar el repositorio
+git clone https://github.com/Oskillar21/ProjectChatBot-Docker.git
+cd ProjectChatBot-Docker
+
+# Construir y levantar los contenedores
 docker-compose up --build
